@@ -1,3 +1,5 @@
+//typescript file, uses "react" which is java web app
+
 import React, {Component} from 'react';
 import DataStreamer, {ServerRespond} from './DataStreamer';
 import Graph from './Graph';
@@ -7,9 +9,10 @@ import {setInterval} from "timers";
 /**
  * State declaration for <App />
  */
+//adding show graph property in i state interface
 interface IState {
     data: ServerRespond[],
-    showGraph: boolean
+    showGraph: boolean,
 }
 
 /**
@@ -40,6 +43,7 @@ class App extends Component<{}, IState> {
     /**
      * Get new data from server and update the state with the new data
      */
+    //you set intervals here to get data from server; multiple different ways to set intervals in js
     getDataFromServer() {
         let x = 0;
         const interval = setInterval(() => {
